@@ -16,7 +16,7 @@ function App() {
           target="_blank"
           rel="noopener noreferrer"
         >
-          Learn you some React
+          This isn't Vue 
         </a>
       </header>
     </div>
