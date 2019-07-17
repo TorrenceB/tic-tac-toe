@@ -1,4 +1,4 @@
-.App {
+/* .App {
   text-align: center;
   align-content: center;
   margin: auto;
@@ -19,5 +19,18 @@
 
 .App-link {
   color: #61dafb;
+} */
+
+.square {
+    height: 200px;
+    background-color: grey;
+    width: calc((100% / 3) - 6px);
+    margin: 1px;
+}
+
+.square h1 {
+    height: 200px;
+    text-align: center;
+    line-height: 200px;
 }
 

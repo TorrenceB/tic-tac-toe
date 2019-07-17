@@ -3,18 +3,23 @@ import React from 'react';
 //Scoreboard
 //Maybe we allow player option to enter name and dispay user name in Player 1/2 fields?
 export const Scoreboard = (props) => (
-    <div className="sb-container">
-        <div className="col-12">
-            <div className="row">
-                <h1>Player 1</h1>
-                <li>Player 1 Score</li>
-                <h1>Player 2</h1>
-                <li>Player 2 Score</li>
+    <div className="container">
+        <div className="row">
+            <div className="col">
+                <h1>Player 1:</h1>
+                <h3>3</h3>
+            </div>
+            <div className="col">
+                <h1>Player 2:</h1>
+                <h3>6</h3>
             </div>
         </div>
-        <div className="btn-container">
-            <button className="restart-btn">Restart</button>
-            <button className="play-btn">Play Again</button>
+        <hr />
+        <div className="row">
+          <div className="col">
+            <button className="btn btn-success btn-lg">Play Again</button>
+            <button className="btn btn-danger btn-lg  ml-3">Restart</button>
+          </div>
         </div>
     </div>
 )
