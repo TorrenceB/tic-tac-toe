@@ -9,7 +9,11 @@ export default class App extends Component {
 render() {
     return (
       <div className="container-fluid">
-        <Board />
+        <div className="row">
+          <div className="column-9">
+            <Board />
+          </div>
+        </div>
         <Scoreboard />
       </div>
     );
