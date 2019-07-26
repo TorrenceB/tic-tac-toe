@@ -40,7 +40,7 @@ export default class Board extends Component {
             {/* Row 1 */}
             <div className="row">
               <div className="square">
-                <button className="test-btn" onClick={this.handleClick} >{this.state.value}</button>
+                <Square onClick={this.handleClick} value={this.state.values[this.state.value]} />
               </div>
               <div className="square">
                 <h1 className="display-1 text-center">X</h1>
