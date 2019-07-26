@@ -7,7 +7,7 @@ export default class Board extends Component {
     state = {
         values: Array(9).fill(null), 
         value: '',
-        isPlayerX: true, //Boolean to flip if PlayerO
+        isPlayerX: true, //Boolean to flip if Player 'O'
         gameFinished: false,
         winner: null,
         boardState: {},
@@ -16,15 +16,14 @@ export default class Board extends Component {
     gameFinishedHandler = () => {}
 
     handleClick = () => {
-        
+      
         let state = this.state;
         let value = state.value;
-        let values = [...state.values];
-        //Player 1 --> Even #'s
-        //Player 2 --> Odd #'s
-        values[value] = 'X';
-        this.setState( { values: values } );
-        console.log(values);
+        let values = [...state.values]; //Create copy of array so we don't mutate original data
+        values[value] = state.isPlayerX ? 'X' : 'O';//Set index of values array to 'X' or 'O'
+        //Change 'isPlayerX' to true or false, depending on state and update the state
+        this.setState( { values: values, isPlayerX: !state.isPlayerX } ); 
+        console.log(values[value]);
     }
 
     render() {
@@ -40,37 +39,64 @@ export default class Board extends Component {
             {/* Row 1 */}
             <div className="row">
               <div className="square">
-                <Square onClick={this.handleClick} value={this.state.values[this.state.value]} />
+                <Square 
+                onClick={this.handleClick} 
+                value={this.state.values[this.state.value]} //Render updated state to Square component
+                />
               </div>
               <div className="square">
-                <h1 className="display-1 text-center">X</h1>
+                <Square 
+                  onClick={this.handleClick} 
+                  value={this.state.values[this.state.value]} //Render updated state to Square component
+                />
               </div>
               <div className="square">
-                <h1 className="display-1 text-center">O</h1>
+                <Square 
+                  onClick={this.handleClick} 
+                  value={this.state.values[this.state.value]} //Render updated state to Square component
+                />
               </div>
             </div>
             {/* Row 2 */}
             <div className="row">
               <div className="square">
-                <h1 className="display-1 text-center">O</h1>
+                <Square 
+                  onClick={this.handleClick} 
+                  value={this.state.values[this.state.value]} //Render updated state to Square component
+                />
               </div>
               <div className="square">
-                <h1 className="display-1 text-center">X</h1>
+                <Square 
+                  onClick={this.handleClick} 
+                  value={this.state.values[this.state.value]} //Render updated state to Square component
+                />
               </div>
               <div className="square">
-                <h1 className="display-1 text-center">X</h1>
+                <Square 
+                  onClick={this.handleClick} 
+                  value={this.state.values[this.state.value]} //Render updated state to Square component
+                />
               </div>
             </div>
             {/* Row 3 */}
             <div className="row">
               <div className="square">
-                <h1 className="display-1 text-center">O</h1>
+                <Square 
+                  onClick={this.handleClick} 
+                  value={this.state.values[this.state.value]} //Render updated state to Square component
+                />
               </div>
               <div className="square">
-                <h1 className="display-1 text-center">O</h1>
+                <Square 
+                  onClick={this.handleClick} 
+                  value={this.state.values[this.state.value]} //Render updated state to Square component
+                />
               </div>
               <div className="square">
-                <h1 className="display-1 text-center">X</h1>
+                <Square 
+                  onClick={this.handleClick} 
+                  value={this.state.values[this.state.value]} //Render updated state to Square component
+                />
               </div>
             </div>
           </div>
