@@ -6,35 +6,53 @@ export default class Board extends Component {
 
     state = {
         values: Array(9).fill(null), 
+        numTiles: 9,
         value: '',
         isPlayerX: true,
         gameFinished: false,
         winner: null,
+        boardState: {},
+    }
+
+    constructor() {
+      super();
+      for(let i = 0; i < this.state.numTiles; i++) {
+        this.state.boardState[`tile-${i}`] = null;
+      }
     }
 
     gameFinishedHandler = () => {}
 
-    handleClick = () => {
-        let state = this.state;
-        let turnCount = 0;
-        let value = state.value;
-        let values = [...state.values, ...value];
-        //Player 1 --> Even #'s
-        //Player 2 --> Odd #'s
-        if(turnCount/2 === 0){
-            //Player 1
-            //value = 'X'
-            this.setState( { values: values, value: 'X'} );
-        } else {
-            //Player 2
-            //value = 'O'
-            this.setState( {value: 'O'} );
-        }
+    handleClick = (index) => {
+        console.log('index :', index);
+        //even
+        // if ((turnCount / 2 == 0) || (turnCount == 0)) {
+
+        // }
+        // let state = this.state;
+        // let turnCount = 0;
+        // let value = state.value;
+        // let values = [...state.values, ...value];
+        // //Player 1 --> Even #'s
+        // //Player 2 --> Odd #'s
+        // if(turnCount/2 === 0){
+        //     //Player 1
+        //     //value = 'X'
+        //     this.setState( { values: values, value: 'X'} );
+        // } else {
+        //     //Player 2
+        //     //value = 'O'
+        //     this.setState( {value: 'O'} );
+        // }
     }
 
     render() {
         let squares = this.state.values.map( (value, index) => {
-            return <Square value={value} key={index} onClick={this.handleClick} />
+            return <Square
+                    value={value}
+                    key={index}
+                    onClick={this.handleClick.bind(this, index)} />
+
         });
 
         return (
