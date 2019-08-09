@@ -25,6 +25,23 @@ export default class Board extends Component {
 
     handleClick = (index) => {
         console.log('index :', index);
+
+        let currentBoardState = this.state.boardState;
+        // this.state.boardState[`tile-${index}`];
+        if (this.state.isPlayerX) {
+          currentBoardState[`tile-${index}`] = 'X';
+          // this.setState({boardState});
+        } else {
+          currentBoardState[`tile-${index}`] = 'O';
+        }
+
+        console.log('currentBoardState :', currentBoardState);
+
+      this.setState({
+        isPlayerX: !this.state.isPlayerX,
+        boardState: {...currentBoardState}
+      });
+      console.log('this.state :', this.state.boardState);
         //even
         // if ((turnCount / 2 == 0) || (turnCount == 0)) {
 
